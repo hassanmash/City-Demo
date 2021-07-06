@@ -19,16 +19,18 @@ This is the screen shot of project.cpp file. You can run the other file (A small
 2. Go to the terminal and go to the directory where the program files are in.
 3. Type command 
 ```
-          g++ filename.cpp -lGL -lGLU -lglut
+g++ filename.cpp -lGL -lGLU -lglut
 ```
 4. Execute the program using
 ```
-          ./a.out
+./a.out
 ```
 
 P.S : If you dont have glut installed in your PC,follow below steps -
   To install OpenGL libraries:
+  
       sudo apt-get install mesa-utils
   To install freeGlut:
+  
       sudo apt-get install freeglut3-dev
 
