@@ -81,19 +81,7 @@ GLfloat cx3 = -45;
 GLfloat cx4 = -45;
 GLfloat cx5 = -45;
 
-GLfloat cx11 = 0;
-GLfloat cx12 = -5;
-GLfloat cx13 = -45;
-GLfloat cx14 = -45;
-GLfloat cx15 = -45;
-
-GLfloat cx21 = 0;
-GLfloat cx22 = -5;
-GLfloat cx23 = -45;
-GLfloat cx24 = -45;
-GLfloat cx25 = -45;
-
-//Elements of frame 1
+//Elements of day and night
 void cloudB(){
 	//left
 	glPushMatrix();
@@ -121,7 +109,6 @@ void cloudB(){
 
 	//middle
 	glPushMatrix();
-	//glColor3f (1, 1 ,1);
 	glTranslatef(-1.5, 5.5, 0);
 	circle(4);
 	glPopMatrix();
@@ -488,7 +475,6 @@ void tution(float r,float g,float b){
     }
 }
 
-
 void car(float r,float g, float b)
 {
 	glBegin(GL_POLYGON);			//car body
@@ -520,7 +506,7 @@ void car(float r,float g, float b)
 	glEnd();
 
 	glBegin(GL_POLYGON);			//car bottom red
-	glColor3f(1.0, 0.0, 0.0);
+	glColor3f(0.2, 0.2, 0.2);
 	glVertex3f(-44, -19, 0);
 	glVertex3f(-44, -13, 0);
 	glVertex3f(-31, -13, 0);
@@ -542,7 +528,87 @@ void car(float r,float g, float b)
 	glPopMatrix();
 }
 
-//Elements of frame2
+void person(int i){
+	// glBegin(GL_POLYGON);			//person
+	// glColor3f(0.0, 0.0, 0.0);
+	// glVertex3f(-1.0, -2.0, 0.0);
+	// glVertex3f(-1.5, -2.0, 0.0);
+	// glVertex3f(-0.5, 0.5, 0.0);
+	// glVertex3f(-0.5, 3.0, 0.0);
+	// glVertex3f(-1.0, 1.0, 0.0);
+	// glVertex3f(-1.5, 1.0, 0.0);
+	// glVertex3f(-0.5, 4.0, 0.0);
+	// glVertex3f(0.5, 4.0, 0.0);
+	// glVertex3f(1.5, 1.0, 0.0);
+	// glVertex3f(1.0, 1.0, 0.0);
+	// glVertex3f(0.5, 3.0, 0.0);
+	// glVertex3f(0.5, 0.5, 0.0);
+	// glVertex3f(1.5, -2.0, 0.0);
+	// glVertex3f(1.0, -2.0, 0.0);
+	// glVertex3f(0.0, 0.0, 0.0);
+	// glEnd();
+
+	glBegin(GL_POLYGON);			//left leg
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(-1.0, -2.0, 0.0);
+	glVertex3f(-1.5, -2.0, 0.0);
+	glVertex3f(-0.5, 0.5, 0.0);
+	glVertex3f(-0.5, 0.0, 0.0);
+	glVertex3f(0.0, 0.0, 0.0);
+	glEnd();
+	glBegin(GL_POLYGON);			//right leg
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(0.0, 0.0, 0.0);
+	glVertex3f(0.5, 0.0, 0.0);
+	glVertex3f(0.5, 0.5, 0.0);
+	glVertex3f(1.5, -2.0, 0.0);
+	glVertex3f(1.0, -2.0, 0.0);
+	glEnd();
+	glBegin(GL_POLYGON);			//body
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(-0.5, 0.0, 0.0);
+	glVertex3f(-0.5, 4.0, 0.0);
+	glVertex3f(0.5, 4.0, 0.0);
+	glVertex3f(0.5, 0.0, 0.0);
+	glEnd();
+	glBegin(GL_POLYGON);			//right arm
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(0.5, 2.5, 0.0);
+	glVertex3f(1.0, 1.0, 0.0);
+	glVertex3f(1.5, 1.0, 0.0);
+	glVertex3f(0.5, 4.0, 0.0);
+	glEnd();
+	glBegin(GL_POLYGON);			//left arm
+	glColor3f(0.0, 0.0, 0.0);
+	glVertex3f(-0.5, 2.5, 0.0);
+	glVertex3f(-1.0, 1.0, 0.0);
+	glVertex3f(-1.5, 1.0, 0.0);
+	glVertex3f(-0.5, 4.0, 0.0);
+	glEnd();
+	glPushMatrix();                 //head
+	glTranslatef(0, 5.0, 0.0);
+	glScalef(1.0, 1.5, 0.0);
+	glColor3f(0.0, 0.0, 0.0);
+	circle(1);
+	glPopMatrix();
+	if(i == 1){
+		glBegin(GL_POLYGON);			//umbrella arm
+		glColor3f(0.3, 0.3, 0.3);
+		glVertex3f(1.1, 1.0, 0.0);
+		glVertex3f(1.5, 1.0, 0.0);
+		glVertex3f(1.5, 7.5, 0.0);
+		glVertex3f(1.1, 7.5, 0.0);
+		glEnd();
+		glBegin(GL_POLYGON);			//umbrella
+		glColor3f(0.3, 0.3, 0.3);
+		glVertex3f(-1.5, 7.5, 0.0);
+		glVertex3f(4.5, 7.5, 0.0);
+		glVertex3f(1.5, 9.0, 0.0);
+		glEnd();
+	}
+}
+
+//Elements of night
 void cloudB2(){
 	//left
 	glPushMatrix();
@@ -637,20 +703,13 @@ void cloud2(){                                     // Three Cloud
 }
 
 //Display 3
-void spindisplay3()
-{
-	cx21 += 0.01;
-	cx22 += 0.01;
-	cx23 += 0.01;
-	cx24 += 0.01;
-	cx25 += 0.005;
+void spindisplay3(){
+	cx1 += 0.01;
+	cx2 += 0.01;
+	cx3 += 0.01;
+	cx4 += 0.01;
+	cx5 += 0.005;
 
-	// if (cx21 > 10)
-	// {
-	// 	glClearColor(0, 0.749, 1, 0);
-	// 	glutDisplayFunc(display4);
-	// 	//glutIdleFunc(spindisplay4);
-	// }
     if (rFlag==2)
 	{
 		glClearColor(0, 0.5, 0.5, 0);
@@ -673,22 +732,17 @@ void spindisplay3()
 	{
 		glClearColor(0, 0.749, 1, 0);
 		glutDisplayFunc(display4);
-		// glutIdleFunc(spindisplay3);
 	}
 	glutPostRedisplay();
 
 }
 
-void display3(void)
-{
-
+void display3(void){
 	glClear(GL_COLOR_BUFFER_BIT);
-	//bitmap_output(0,0, "TUTION CLASSES", GLUT_BITMAP_TIMES_ROMAN_24);
 
 	//MOON
 	glPushMatrix();
-	//glTranslatef(0.0, 0.0, 0.0);
-	glTranslatef(cx25, 40.0, 0.0);
+	glTranslatef(cx5, 40.0, 0.0);
 	glScalef(1.0, 1.5, 0.0);
 	glColor3f(1.0, 1.0, 1.0);
 	circle(3);
@@ -697,60 +751,74 @@ void display3(void)
 	//Cloud1
 	glPushMatrix();
 	glColor3f(0.2, 0.2, 0.1);
-	glTranslatef(cx21, 17.0, 0.0);
+	glTranslatef(cx1, 17.0, 0.0);
 	cloudB();
 	glPopMatrix();
 
 	//Cloud2
 	glPushMatrix();
 	glColor3f(0.2, 0.2, 0.2);
-	glTranslatef(cx22, 20.0, 0.0);
+	glTranslatef(cx2, 20.0, 0.0);
 	cloudB();
 	glPopMatrix();
 	
 	draw_tree();
-	float b = 0.5;
-	road(b);
+	road(0.5);
 	
-	float r = 0.4;
-	float g = 0.4;
-	b = 0.4;
+	//buildings
 	glPushMatrix();
-	//glTranslatef(10,10,0);
 	glTranslatef(x1, 0, 0);
-	tution(r,g,b);
+	tution(0.4,0.4,0.4);
 	glPopMatrix();
 
-    r = 0.0;
-    g = 1.0;
-    b = 1.0;
+	//car 3
 	glPushMatrix();
-	glTranslatef(cx21, -5, 0);
-	car(r,g,b);
+	glTranslatef(cx1-40, 5, 0);
+	car(0.6,0.9,0.3);
 	glPopMatrix();
+	//car 2
+	glPushMatrix();
+	glTranslatef(cx1-20, 5, 0);
+	car(0.3,0.5,1.0);
+	glPopMatrix();
+	//car 1
+	glPushMatrix();
+	glTranslatef(cx1, -5, 0);
+	car(0.0,1.0,1.0);
+	glPopMatrix();
+
+	//person 1
+	glPushMatrix();
+	glTranslatef(cx4, -45, 0);
+	person(0);
+	glPopMatrix();
+	//person 2
+	glPushMatrix();
+	glTranslatef(cx4+15, -40, 0);
+	person(0);
+	glPopMatrix();
+	//person 3
+	glPushMatrix();
+	glTranslatef(cx4-25, -43, 0);
+	person(0);
+	glPopMatrix();
+
 
 	bitmap_output(-36, 12, "OFFICE", GLUT_BITMAP_TIMES_ROMAN_24);
 	bitmap_output(-4, 25, "Alpha Recidency", GLUT_BITMAP_TIMES_ROMAN_24);
 	bitmap_output(30, 24, "HOME", GLUT_BITMAP_TIMES_ROMAN_24);
-	bitmap_output(-42, -39, "NIGHT TIME, WHEN THE POWER GOES OFF.", GLUT_BITMAP_TIMES_ROMAN_24);
+	bitmap_output(-42, -39, "Night time, when the power goes off.", GLUT_BITMAP_TIMES_ROMAN_24);
 	glFlush();
 }
 
 //Display 2
-void spindisplay2()
-{
-	cx11 += 0.01;
-	cx12 += 0.01;
-	cx13 += 0.01;
-	cx14 += 0.01;
-	cx15 += 0.005;
+void spindisplay2(){
+	cx1 += 0.01;
+	cx2 += 0.01;
+	cx3 += 0.01;
+	cx4 += 0.01;
+	cx5 += 0.005;
 
-	// if (cx11 > 10)
-	// {
-	// 	glClearColor(0, 0.5, 0.5, 0);
-	// 	glutDisplayFunc(display3);
-	// 	glutIdleFunc(spindisplay3);
-	// }
     if (rFlag==2)
 	{
 		glClearColor(0, 0.5, 0.5, 0);
@@ -779,16 +847,12 @@ void spindisplay2()
 
 }
 
-void display2(void)
-{
-
+void display2(void){
 	glClear(GL_COLOR_BUFFER_BIT);
-	//bitmap_output(0,0, "TUTION CLASSES", GLUT_BITMAP_TIMES_ROMAN_24);
 
 	//MOON
 	glPushMatrix();
-	//glTranslatef(0.0, 0.0, 0.0);
-	glTranslatef(cx15, 40.0, 0.0);
+	glTranslatef(cx5, 40.0, 0.0);
 	glScalef(1.0, 1.5, 0.0);
 	glColor3f(1.0, 1.0, 1.0);
 	circle(3);
@@ -797,35 +861,56 @@ void display2(void)
 	//Cloud1
 	glPushMatrix();
 	glColor3f(0.2, 0.2, 0.2);
-	glTranslatef(cx11, 17.0, 0.0);
+	glTranslatef(cx1, 17.0, 0.0);
 	cloudB2();
 	glPopMatrix();
 
 	//Cloud2
 	glPushMatrix();
 	glColor3f(0.2, 0.2, 0.2);
-	glTranslatef(cx12, 15.0, 0.0);
+	glTranslatef(cx2, 15.0, 0.0);
 	cloudB2();
 	glPopMatrix();
 
 	draw_tree();
-	float b = 0.5;
-	road(b);
+	road(0.5);
 	
-	float r = 1.0; float g = 1.0; 
-	b = 0.0;
+	//building
 	glPushMatrix();
-	//glTranslatef(10,10,0);
 	glTranslatef(x1, 0, 0);
-	tution(r,g,b);
+	tution(1.0,1.0,0.0);
 	glPopMatrix();
 
-    r = 1.0;
-    g = 1.0;
-    b = 0.0;
+	//car 3
 	glPushMatrix();
-	glTranslatef(cx11, -5, 0);
-	car(r,g,b);
+	glTranslatef(cx1-40, 5, 0);
+	car(0.6,1.0,0.1);
+	glPopMatrix();
+	//car 2
+	glPushMatrix();
+	glTranslatef(cx1-20, 5, 0);
+	car(0.0,1.0,0.5);
+	glPopMatrix();
+	//car 1
+	glPushMatrix();
+	glTranslatef(cx1, -5, 0);
+	car(1.0,1.0,0.0);
+	glPopMatrix();
+
+	//person 1
+	glPushMatrix();
+	glTranslatef(cx4, -45, 0);
+	person(0);
+	glPopMatrix();
+	//person 2
+	glPushMatrix();
+	glTranslatef(cx4+15, -40, 0);
+	person(0);
+	glPopMatrix();
+	//person 3
+	glPushMatrix();
+	glTranslatef(cx4-25, -43, 0);
+	person(0);
 	glPopMatrix();
 
 	bitmap_output(-36, 12, "OFFICE", GLUT_BITMAP_TIMES_ROMAN_24);
@@ -836,9 +921,7 @@ void display2(void)
 }
 
 //Display 1
-
-void spindisplay1()
-{
+void spindisplay1(){
 	cx1 += 0.01;
 	cx2 += 0.01;
 	cx3 += 0.01;
@@ -867,20 +950,15 @@ void spindisplay1()
 	{
 		glClearColor(0, 0.749, 1, 0);
 		glutDisplayFunc(display4);
-		// glutIdleFunc(spindisplay3);
 	}
 	glutPostRedisplay();
 }
 
-void display1(void)
-{
-
+void display1(void){
 	glClear(GL_COLOR_BUFFER_BIT);
-	//bitmap_output(0,0, "TUTION CLASSES", GLUT_BITMAP_TIMES_ROMAN_24);
 
 	//SUN
 	glPushMatrix();
-	//glTranslatef(0.0, 0.0, 0.0);
 	glTranslatef(cx5, 40.0, 0.0);
 	glScalef(1.0, 1.5, 0.0);
 	glColor3f(1.0, 1.0, 0.0);
@@ -909,24 +987,44 @@ void display1(void)
 	glPopMatrix();
 	
 	draw_tree();
-	float b = 0.0;
-	road(b);
+	road(0.0);
 	
-	float r = 1.0;
-	float g = 1.0;
-	b = 1.0;
+	//Buildings
 	glPushMatrix();
-	//glTranslatef(10,10,0);
 	glTranslatef(x1, 0, 0);
-	tution(r,g,b);
+	tution(1.0,1.0,1.0);
 	glPopMatrix();
 
-    r = 1.0;
-    g = 0.0;
-    b = 1.0;
+	//car 3
+	glPushMatrix();
+	glTranslatef(cx1-40, 5, 0);
+	car(1.0,0.5,0.7);
+	glPopMatrix();
+	//car 2
+	glPushMatrix();
+	glTranslatef(cx1-20, 5, 0);
+	car(0.1,0.5,1.0);
+	glPopMatrix();
+	//car 1
 	glPushMatrix();
 	glTranslatef(cx1, -5, 0);
-	car(r,g,b);
+	car(1.0,0.0,1.0);
+	glPopMatrix();
+
+	//person 1
+	glPushMatrix();
+	glTranslatef(cx4, -45, 0);
+	person(1);
+	glPopMatrix();
+	//person 2
+	glPushMatrix();
+	glTranslatef(cx4+15, -40, 0);
+	person(1);
+	glPopMatrix();
+	//person 3
+	glPushMatrix();
+	glTranslatef(cx4-25, -43, 0);
+	person(1);
 	glPopMatrix();
 
 	bitmap_output(-36, 12, "OFFICE", GLUT_BITMAP_TIMES_ROMAN_24);
@@ -937,8 +1035,7 @@ void display1(void)
 }
 
 //init function
-void init(void)
-{
+void init(void){
 	glClearColor(0, 0.749, 1, 0);
 	glOrtho(-50.0, 50.0, -50.0, 50.0, -1.0, 1.0);
 	//glClearColor(0.5, 0.749, 0.5, 0);
@@ -979,7 +1076,6 @@ int main(int argc, char **argv)
 	//glClearColor(1.0, 1.0, 1.0, 1.0);
 	glColor3f(1, 0, 0);
 	glLineWidth(5.0);
-	//glutDisplayFunc(display4);
 	glutDisplayFunc(display0);
 	glutKeyboardFunc(processNormalKeys);
     glutCreateMenu(modMenu);
