@@ -17,8 +17,14 @@ This is the screen shot of project.cpp file. You can run the other file (A small
 #### How to run the program. (For linux users)
 1. Download the .cpp file
 2. Go to the terminal and go to the directory where the program files are in.
-3. Type command "g++ filename.cpp -lGL -lGLU -lglut" 
-4. Execute the program using "./a.out"
+3. Type command 
+```
+          g++ filename.cpp -lGL -lGLU -lglut
+```
+4. Execute the program using
+```
+          ./a.out
+```
 
 P.S : If you dont have glut installed in your PC,follow below steps -
   To install OpenGL libraries:
