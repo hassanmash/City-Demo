@@ -144,41 +144,41 @@ void a(){      //mini Cloud
 	circle(4);
 	glPopMatrix();
 }
-void c() {                                       //One Single Cloud
+void c(float r,float g,float b) {                                       //One Single Cloud
 	glPushMatrix();
-	glColor3f(1, 1, 1);
+	glColor3f(r, g, b);
 	glTranslatef(35, 10, 0);
 	a();
 	glPopMatrix();
 
 	glPushMatrix();
-	glColor3f(1, 1, 1);
+	glColor3f(r, g, b);
 	glTranslatef(28, 16, 0);
 	a();
 	glPopMatrix();
 
 	glPushMatrix();
-	glColor3f(1, 1, 1);
+	glColor3f(r, g, b);
 	glTranslatef(20, 10, 0);
 	a();
 	glPopMatrix();
 }
 
-void cloud(){                                     // Three Cloud in first frame
+void cloud(float r,float g,float b){                                     // Three Cloud in first frame
 	glPushMatrix();
 	glTranslatef(-15.0, 30.0, 0.0);
 	glScalef(0.7, 0.7, 0.0);
-	c();
+	c(r,g,b);
 	glPopMatrix();
 	glPushMatrix();
 	glTranslatef(20.0, 25.0, 0.0);
 	glScalef(0.7, 0.7, 0.0);
-	c();
+	c(r,g,b);
 	glPopMatrix();
 	glPushMatrix();
 	glTranslatef(-60.0, 25.0, 0.0);
 	glScalef(0.7, 0.7, 0.0);
-	c();
+	c(r,g,b);
 	glPopMatrix();
 }
 void draw_tree(){
@@ -608,100 +608,6 @@ void person(int i){
 	}
 }
 
-//Elements of night
-void cloudB2(){
-	//left
-	glPushMatrix();
-	glTranslatef(4, 5.5, 0);
-	circle(4);
-	glPopMatrix();
-	//right
-	glPushMatrix();
-	glTranslatef(-8, 5.5, 0);
-	circle(3.5);
-	glPopMatrix();
-	//top left
-	glPushMatrix();
-	glTranslatef(-3.5, 9, 0);
-	circle(3.5);
-	glPopMatrix();
-	//top right
-	glPushMatrix();
-	glTranslatef(1, 9, 0);
-	circle(3);
-	glPopMatrix();
-	//middle
-	glPushMatrix();
-	//glColor3f (1, 1 ,1);
-	glTranslatef(-1.5, 5.5, 0);
-	circle(4);
-	glPopMatrix();
-}
-void a2(){                                        //mini Cloud
-	//left
-	glPushMatrix();
-	glTranslatef(4, 5.5, 0);
-	circle(4);
-	glPopMatrix();
-	//right
-	glPushMatrix();
-	glTranslatef(-8, 5.5, 0);
-	circle(3.5);
-	glPopMatrix();
-	//top left
-	glPushMatrix();
-	glTranslatef(-3.5, 9, 0);
-	circle(3.5);
-	glPopMatrix();
-	//top right
-	glPushMatrix();
-	glTranslatef(1, 9, 0);
-	circle(3);
-	glPopMatrix();
-	//middle
-	glPushMatrix();
-	glTranslatef(-1.5, 5.5, 0);
-	circle(4);
-	glPopMatrix();
-}
-void c2()                                        //One Single Cloud
-{
-	glPushMatrix();
-	glColor3f(1, 1, 1);
-	glTranslatef(35, 10, 0);
-	a2();
-	glPopMatrix();
-
-	glPushMatrix();
-	glColor3f(1, 1, 1);
-	glTranslatef(28, 16, 0);
-	a2();
-	glPopMatrix();
-
-	glPushMatrix();
-	glColor3f(1, 1, 1);
-	glTranslatef(20, 10, 0);
-	a2();
-	glPopMatrix();
-}
-void cloud2(){                                     // Three Cloud
-	glPushMatrix();
-	glTranslatef(-15.0, 30.0, 0.0);
-	glScalef(0.7, 0.7, 0.0);
-	c2();
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(20.0, 25.0, 0.0);
-	glScalef(0.7, 0.7, 0.0);
-	c2();
-	glPopMatrix();
-	glPushMatrix();
-	glTranslatef(-60.0, 25.0, 0.0);
-	glScalef(0.7, 0.7, 0.0);
-	c2();
-	glPopMatrix();
-}
-
 //Display 3
 void spindisplay3(){
 	cx1 += 0.01;
@@ -750,7 +656,7 @@ void display3(void){
 
 	//Cloud1
 	glPushMatrix();
-	glColor3f(0.2, 0.2, 0.1);
+	glColor3f(0.2, 0.2, 0.2);
 	glTranslatef(cx1, 17.0, 0.0);
 	cloudB();
 	glPopMatrix();
@@ -760,6 +666,13 @@ void display3(void){
 	glColor3f(0.2, 0.2, 0.2);
 	glTranslatef(cx2, 20.0, 0.0);
 	cloudB();
+	glPopMatrix();
+
+	//Cloud3
+	glPushMatrix();
+	glTranslatef(cx3, 0.0, 0.0);
+	glScalef(0.8, 1, 0);
+	cloud(0.2,0.2,0.2);
 	glPopMatrix();
 	
 	draw_tree();
@@ -862,14 +775,21 @@ void display2(void){
 	glPushMatrix();
 	glColor3f(0.2, 0.2, 0.2);
 	glTranslatef(cx1, 17.0, 0.0);
-	cloudB2();
+	cloudB();
 	glPopMatrix();
 
 	//Cloud2
 	glPushMatrix();
 	glColor3f(0.2, 0.2, 0.2);
-	glTranslatef(cx2, 15.0, 0.0);
-	cloudB2();
+	glTranslatef(cx2, 20.0, 0.0);
+	cloudB();
+	glPopMatrix();
+
+	//Cloud3
+	glPushMatrix();
+	glTranslatef(cx3, 0.0, 0.0);
+	glScalef(0.8, 1, 0);
+	cloud(0.2,0.2,0.2);
 	glPopMatrix();
 
 	draw_tree();
@@ -983,7 +903,7 @@ void display1(void){
 	glPushMatrix();
 	glTranslatef(cx3, 0.0, 0.0);
 	glScalef(0.8, 1, 0);
-	cloud();
+	cloud(1.0,1.0,1.0);
 	glPopMatrix();
 	
 	draw_tree();
