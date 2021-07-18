@@ -1,5 +1,5 @@
 # City-Demo
-A simple cpp program using OpenGL libraries done along with my friend (Sheikh Ziad)[https://github.com/sheikhziad].
+A simple cpp program using OpenGL libraries done along with my friend [Sheikh Ziad](https://github.com/sheikhziad).
 
 ### How to run the program. (For linux users)
 1. Download the .cpp file
